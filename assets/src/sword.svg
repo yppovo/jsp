@@ -1,0 +1,67 @@
+﻿<svg viewBox="0 0 240 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#eef2f6"/>
+      <stop offset="0.62" stop-color="#c9d4de"/>
+      <stop offset="1" stop-color="#9fb0c0"/>
+    </linearGradient>
+    <linearGradient id="guard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6df8e"/>
+      <stop offset="1" stop-color="#b8862b"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a3626"/>
+      <stop offset="0.5" stop-color="#6b4a2f"/>
+      <stop offset="1" stop-color="#3a2a1c"/>
+    </linearGradient>
+    <linearGradient id="pommel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6df8e"/>
+      <stop offset="1" stop-color="#a87820"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 软阴影 -->
+  <ellipse cx="122" cy="622" rx="40" ry="10" fill="#1a1410" opacity="0.12"/>
+
+  <!-- 剑穗流苏 -->
+  <path d="M 120 512 C 117 532 124 546 119 566" stroke="#c0392b" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 119 566 C 112 588 106 604 98 616" stroke="#d64545" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <path d="M 119 566 C 119 590 119 608 119 620" stroke="#c0392b" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <path d="M 119 566 C 126 588 132 604 140 616" stroke="#e05a5a" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+
+  <!-- 阴阳鱼小珠（呼应角色坠饰） -->
+  <circle cx="119" cy="562" r="7" fill="#1a1a1a" stroke="#e8c15a" stroke-width="1.5"/>
+  <path d="M 119 557 A 3.5 3.5 0 0 0 119 564 A 3.5 3.5 0 0 1 119 568 Z" fill="#f2f2f2"/>
+  <circle cx="118.6" cy="559.6" r="1.1" fill="#f2f2f2"/>
+  <circle cx="119.4" cy="565.4" r="1.1" fill="#1a1a1a"/>
+
+  <!-- 剑首 -->
+  <rect x="108" y="498" width="24" height="16" rx="6" fill="url(#pommel)" stroke="#5a3a12" stroke-width="2"/>
+  <rect x="112" y="495" width="16" height="4" rx="2" fill="#8a5a20"/>
+
+  <!-- 剑柄（红绳缠绕） -->
+  <rect x="110" y="378" width="20" height="120" rx="6" fill="url(#grip)" stroke="#2b2018" stroke-width="2"/>
+  <g stroke="#c0392b" stroke-width="6" opacity="0.95">
+    <line x1="112" y1="392" x2="128" y2="386"/>
+    <line x1="112" y1="404" x2="128" y2="398"/>
+    <line x1="112" y1="416" x2="128" y2="410"/>
+    <line x1="112" y1="428" x2="128" y2="422"/>
+    <line x1="112" y1="440" x2="128" y2="434"/>
+    <line x1="112" y1="452" x2="128" y2="446"/>
+    <line x1="112" y1="464" x2="128" y2="458"/>
+    <line x1="112" y1="476" x2="128" y2="470"/>
+  </g>
+  <rect x="108" y="372" width="24" height="10" rx="4" fill="#8a5a20"/>
+
+  <!-- 护手 -->
+  <path d="M 62 376 Q 120 358 178 376 Q 182 392 176 398 Q 120 382 64 398 Q 58 392 62 376 Z" fill="url(#guard)" stroke="#5a3a12" stroke-width="2.5"/>
+  <rect x="104" y="366" width="32" height="22" rx="6" fill="#8a5a20" opacity="0.45"/>
+  <path d="M 104 372 L 136 372" stroke="#f6df8e" stroke-width="2" opacity="0.65"/>
+
+  <!-- 剑身（银刃） -->
+  <path d="M 118 34 C 121 40 126 52 126 64 L 126 356 Q 126 366 120 366 Q 114 366 114 356 L 114 64 C 114 52 119 40 118 34 Z" fill="url(#blade)" stroke="#2b2320" stroke-width="2"/>
+  <line x1="120" y1="46" x2="120" y2="360" stroke="#93a5b5" stroke-width="1.6" opacity="0.75"/>
+  <line x1="115.5" y1="62" x2="115.5" y2="354" stroke="#ffffff" stroke-width="2.2" opacity="0.92"/>
+  <path d="M 118 38 C 119 42 122 48 124 52" stroke="#ffffff" stroke-width="1.4" fill="none" opacity="0.85"/>
+</svg>

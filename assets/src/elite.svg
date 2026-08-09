@@ -1,0 +1,51 @@
+﻿<svg viewBox="0 0 340 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="e_skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c394"/><stop offset="1" stop-color="#d99a63"/></linearGradient>
+    <linearGradient id="e_robe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a345a"/><stop offset="1" stop-color="#3a203a"/></linearGradient>
+  </defs>
+  <!-- 后腿 -->
+  <rect x="154" y="320" width="28" height="110" rx="12" fill="#2e1a2e"/>
+  <ellipse cx="168" cy="432" rx="21" ry="10" fill="#160e16"/>
+  <!-- 身体（大块头） -->
+  <path d="M 132 216 C 128 268 132 312 170 322 C 208 312 212 268 208 216 L 200 202 C 178 214 162 214 140 202 Z" fill="url(#e_robe)"/>
+  <path d="M 170 222 L 132 262 L 170 322 L 208 262 Z" fill="#d8c9b0"/>
+  <rect x="128" y="308" width="84" height="16" rx="6" fill="#b8862b"/>
+  <path d="M 212 308 L 232 318 L 226 330 L 206 320 Z" fill="#b8862b"/>
+  <!-- 左臂 -->
+  <path d="M 134 224 C 120 256 118 290 130 318 C 142 326 152 312 152 292 L 156 252 C 154 240 146 230 134 224 Z" fill="#3e223e"/>
+  <circle cx="138" cy="326" r="11" fill="url(#e_skin)"/>
+  <!-- 头 -->
+  <ellipse cx="170" cy="156" rx="48" ry="54" fill="url(#e_skin)"/>
+  <!-- 竖发 -->
+  <path d="M 128 136 C 122 76 158 50 170 50 C 182 50 218 76 212 136 C 202 100 188 92 170 92 C 152 92 138 100 128 136 Z" fill="#1c1420"/>
+  <path d="M 122 100 C 110 90 116 76 130 76 C 124 68 132 58 144 64 Z" fill="#2a2030"/>
+  <path d="M 218 100 C 230 90 224 76 210 76 C 216 68 208 58 196 64 Z" fill="#2a2030"/>
+  <!-- 头巾 -->
+  <path d="M 122 128 Q 170 106 218 128 L 216 146 Q 170 126 124 146 Z" fill="#1c1420"/>
+  <!-- 怒眉 -->
+  <path d="M 140 138 Q 152 128 166 134" stroke="#0e0a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 200 138 Q 188 128 174 134" stroke="#0e0a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- 眼睛 -->
+  <ellipse cx="150" cy="154" rx="8" ry="6" fill="#fff"/>
+  <ellipse cx="190" cy="154" rx="8" ry="6" fill="#fff"/>
+  <circle cx="152" cy="155" r="3.8" fill="#1a0e08"/>
+  <circle cx="188" cy="155" r="3.8" fill="#1a0e08"/>
+  <!-- 鼻 -->
+  <path d="M 170 162 L 168 174" stroke="#8a4a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 嘴（呲牙） -->
+  <path d="M 152 182 Q 170 192 188 180 Q 180 200 170 200 Q 160 200 152 182 Z" fill="#5a2a18"/>
+  <rect x="164" y="184" width="8" height="8" fill="#fff" rx="1"/>
+  <rect x="176" y="183" width="7" height="7" fill="#fff" rx="1"/>
+  <rect x="177" y="187" width="4" height="3" fill="#e0b040"/>
+  <!-- 右臂 + 狼牙棒 -->
+  <path d="M 206 226 C 220 260 224 300 210 330 C 198 338 186 324 186 304 L 192 256 C 194 244 200 234 206 226 Z" fill="#3e223e"/>
+  <circle cx="206" cy="338" r="11" fill="url(#e_skin)"/>
+  <g transform="rotate(18 206 338)">
+    <rect x="200" y="250" width="14" height="104" rx="6" fill="#6b4a2f" stroke="#3a2418" stroke-width="2"/>
+    <circle cx="207" cy="240" r="8" fill="#8a8a9a" stroke="#4a4a5a" stroke-width="2"/>
+    <path d="M 201 246 L 213 236 M 196 258 L 212 250 M 196 272 L 212 264" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- 前腿 -->
+  <rect x="188" y="320" width="28" height="110" rx="12" fill="#4a2a4a"/>
+  <ellipse cx="202" cy="432" rx="21" ry="10" fill="#1a101a"/>
+</svg>
