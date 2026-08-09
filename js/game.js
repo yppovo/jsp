@@ -392,6 +392,7 @@
       resultTitle.className = "title fail";
       resultDesc.textContent = "你负伤倒下了……\n侠客也会暂败，养好伤，再战一场！";
     }
+    $("#btnCh2").style.display = win ? "" : "none";
     resultOverlay.classList.add("open");
   }
 
@@ -465,6 +466,7 @@
 
     $("#btnTitle").addEventListener("click", () => { AudioSys.click(); location.href = "index.html"; });
     $("#btnRetry").addEventListener("click", () => { AudioSys.click(); location.reload(); });
+    $("#btnCh2").addEventListener("click", () => { AudioSys.click(); location.href = "chapter2.html"; });
     $("#btnTitleEnd").addEventListener("click", () => { AudioSys.click(); location.href = "index.html"; });
     $("#btnMusic").addEventListener("click", () => {
       const m = AudioSys.isMuted();
