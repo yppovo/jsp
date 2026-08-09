@@ -409,7 +409,7 @@
     // 对白打开时：点击=继续
     if (dialogEl.style.display !== "none") { advanceDialog(); return; }
     if (state === "wave") {
-      if (ev.target && ev.target.closest && ev.target.closest(".hud")) return;
+      if (ev.target && ev.target.closest && (ev.target.closest(".hud") || ev.target.closest(".touch-ctrl"))) return;
       slash();
     }
   }
