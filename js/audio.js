@@ -101,6 +101,18 @@ const AudioSys = (() => {
         noise(t + 0.02, 0.25, 0.14, 300);
       } catch (e) {}
     },
+    thunder() {
+      try {
+        ensureCtx(); if (!ctx) return;
+        const t = ctx.currentTime;
+        // 低频轰鸣
+        tone(70, t, 1.4, "sawtooth", 0.20, 38);
+        tone(46, t + 0.12, 1.6, "square", 0.16, 30);
+        // 闷雷噪声
+        noise(t, 1.6, 0.30, 180);
+        noise(t + 0.4, 1.2, 0.22, 120);
+      } catch (e) {}
+    },
     roar() {
       try {
         ensureCtx(); if (!ctx) return;
