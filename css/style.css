@@ -415,3 +415,32 @@ img { -webkit-user-drag: none; }
   color: rgba(244,233,208,.6); font-size: 13px; letter-spacing: 2px;
   background: rgba(20,12,8,.5); padding: 6px 12px; border-radius: 9px; border: 1px solid #6b4a2f;
 }
+/* ---------- 第二章：窗外下雨打雷 ---------- */
+.yrain { animation: yRainFall 0.8s linear infinite; }
+@keyframes yRainFall { from { transform: translateY(0); } to { transform: translateY(360px); } }
+.yflash { animation: yLightning 5.2s linear infinite; }
+@keyframes yLightning {
+  0%, 91%, 93%, 95.5%, 100% { opacity: 0; }
+  91.5% { opacity: .85; }
+  92.2% { opacity: .12; }
+  92.7% { opacity: .7; }
+}
+.ybolt { animation: yBolt 5.2s linear infinite; }
+@keyframes yBolt {
+  0%, 91.2%, 93.6%, 100% { opacity: 0; }
+  92% { opacity: 1; }
+  92.4% { opacity: .85; }
+}
+
+/* ---------- 手机端适配 ---------- */
+@media (max-width: 620px) {
+  .c2-char { height: 28vh; }
+  .c2-char.hero { left: 3%; }
+  .c2-char.magistrate { right: 3%; }
+  .c2-progress { font-size: 11px; padding: 4px 9px; }
+  .c2-music { font-size: 12px; padding: 5px 10px; }
+  .dialog { width: 94vw; padding: 12px 16px 10px; bottom: 7%; }
+  .dialog .text { font-size: 16px; line-height: 1.7; }
+  .dialog .next { bottom: 8px; right: 12px; font-size: 12px; }
+  .c2-banner span { letter-spacing: 14px; }
+}
