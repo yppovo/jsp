@@ -418,18 +418,21 @@ img { -webkit-user-drag: none; }
 /* ---------- 第二章：窗外下雨打雷 ---------- */
 .yrain { animation: yRainFall 0.8s linear infinite; }
 @keyframes yRainFall { from { transform: translateY(0); } to { transform: translateY(360px); } }
-.yflash { animation: yLightning 5.2s linear infinite; }
+.yflash { animation: yLightning 3.6s linear infinite; }
 @keyframes yLightning {
-  0%, 91%, 93%, 95.5%, 100% { opacity: 0; }
-  91.5% { opacity: .85; }
-  92.2% { opacity: .12; }
-  92.7% { opacity: .7; }
+  0%, 88%, 91%, 94.5%, 97%, 100% { opacity: 0; }
+  88.5% { opacity: .95; }
+  89.2% { opacity: .15; }
+  89.8% { opacity: .8; }
+  91.4% { opacity: .25; }
+  92% { opacity: .7; }
 }
-.ybolt { animation: yBolt 5.2s linear infinite; }
+.ybolt { animation: yBolt 3.6s linear infinite; }
 @keyframes yBolt {
-  0%, 91.2%, 93.6%, 100% { opacity: 0; }
-  92% { opacity: 1; }
-  92.4% { opacity: .85; }
+  0%, 88.2%, 94.6%, 100% { opacity: 0; }
+  89% { opacity: 1; }
+  89.5% { opacity: .9; }
+  92.2% { opacity: .95; }
 }
 
 /* ---------- 手机端适配 ---------- */
@@ -437,10 +440,30 @@ img { -webkit-user-drag: none; }
   .c2-char { height: 28vh; }
   .c2-char.hero { left: 3%; }
   .c2-char.magistrate { right: 3%; }
-  .c2-progress { font-size: 11px; padding: 4px 9px; }
-  .c2-music { font-size: 12px; padding: 5px 10px; }
+  .c2-progress { font-size: 11px; padding: 4px 9px; top: 66px; }
+  .c2-music { font-size: 12px; padding: 5px 10px; top: 64px; }
   .dialog { width: 94vw; padding: 12px 16px 10px; bottom: 7%; }
   .dialog .text { font-size: 16px; line-height: 1.7; }
   .dialog .next { bottom: 8px; right: 12px; font-size: 12px; }
   .c2-banner span { letter-spacing: 14px; }
+}
+/* ---------- 顶部红灯笼（自适应两端） ---------- */
+.c2-lantern { position: absolute; top: 3%; width: 46px; height: 64px; z-index: 8; pointer-events: none; }
+.c2-lantern.left { left: 4%; }
+.c2-lantern.right { right: 4%; }
+.c2-lantern .cord { display: block; width: 2px; height: 18px; margin: 0 auto; background: #1f1208; }
+.c2-lantern .lamp {
+  display: block; width: 46px; height: 46px; margin: 0 auto;
+  background: radial-gradient(circle at 40% 35%, #e86a5a, #a83232 72%);
+  border: 2px solid #7a1a10; border-radius: 50%;
+  color: #ffdf9a; font-size: 22px; line-height: 44px; text-align: center;
+  font-family: KaiTi, serif;
+  box-shadow: 0 0 18px rgba(224,90,74,.5), inset 0 0 8px rgba(255,160,80,.35);
+}
+@media (max-width: 620px) {
+  .c2-lantern { top: 2%; width: 38px; height: 52px; }
+  .c2-lantern.left { left: 3%; }
+  .c2-lantern.right { right: 3%; }
+  .c2-lantern .cord { height: 13px; }
+  .c2-lantern .lamp { width: 38px; height: 38px; font-size: 18px; line-height: 36px; }
 }
