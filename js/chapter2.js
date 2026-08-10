@@ -229,7 +229,13 @@
   }
 
   /* ---------- 初始化 ---------- */
+  let thunderTimer = null;
+
   function init() {
+    // 窗外雷声：约每 3.6 秒一次闷雷（与闪电动画节奏呼应）
+    thunderTimer = setInterval(() => {
+      try { AudioSys.thunder(); } catch (e) {}
+    }, 3600);
     window.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", (ev) => {
       AudioSys.init();
