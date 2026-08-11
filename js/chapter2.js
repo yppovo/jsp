@@ -235,8 +235,9 @@
     const fast = document.querySelector(".yrain");
     const slow = document.querySelector(".yrain2");
     const items = [];
-    if (fast) items.push({ el: fast, speed: 1500, y: 0 });
-    if (slow) items.push({ el: slow, speed: 800, y: 130 });
+    // 细雨：斜向（左上→右下）缓慢飘落
+    if (fast) items.push({ el: fast, speed: 240, y: 0 });
+    if (slow) items.push({ el: slow, speed: 130, y: 150 });
     if (!items.length) return;
     let last = performance.now();
     function tick(now) {
@@ -245,7 +246,7 @@
       for (const it of items) {
         it.y += it.speed * dt;
         if (it.y > 470) it.y -= 470;
-        it.el.setAttribute("transform", "translate(0, " + it.y.toFixed(2) + ")");
+        it.el.setAttribute("transform", "translate(" + (it.y * 0.714).toFixed(2) + ", " + it.y.toFixed(2) + ")");
       }
       requestAnimationFrame(tick);
     }
