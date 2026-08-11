@@ -105,12 +105,60 @@ const AudioSys = (() => {
       try {
         ensureCtx(); if (!ctx) return;
         const t = ctx.currentTime;
-        // 低频轰鸣
-        tone(70, t, 1.4, "sawtooth", 0.20, 38);
-        tone(46, t + 0.12, 1.6, "square", 0.16, 30);
-        // 闷雷噪声
-        noise(t, 1.6, 0.30, 180);
-        noise(t + 0.4, 1.2, 0.22, 120);
+
+        // 1) 先声：短促“咔嚓”脆响（高频带通噪声，快速衰减）
+        noise(t, 0.14, 0.55, 1900);
+        noise(t + 0.01, 0.10, 0.35, 3200);
+
+        // 2) 主轰鸣：低频棕噪声滚雷（随机起伏，滚 3 秒多）
+        const dur = 3.6;
+        const len = Math.max(1, Math.floor(ctx.sampleRate * dur));
+        const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+        const d = buf.getChannelData(0);
+        let last = 0;
+        for (let i = 0; i < len; i++) {
+          const white = Math.random() * 2 - 1;
+          last = (last + 0.02 * white) / 1.02;
+          d[i] = last * 3.6;
+        }
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        const lp = ctx.createBiquadFilter();
+        lp.type = "lowpass"; lp.frequency.value = 150; lp.Q.value = 0.7;
+        const g = ctx.createGain();
+        g.gain.setValueAtTime(0.0001, t + 0.06);
+        g.gain.exponentialRampToValueAtTime(0.5, t + 0.4);
+        let seg = t + 0.4;
+        while (seg < t + dur - 0.45) {
+          const nxt = seg + 0.16 + Math.random() * 0.24;
+          g.gain.linearRampToValueAtTime(0.22 + Math.random() * 0.55, nxt);
+          seg = nxt;
+        }
+        g.gain.linearRampToValueAtTime(0.0001, t + dur);
+        src.connect(lp); lp.connect(g); g.connect(sfxGain);
+        src.start(t + 0.06);
+
+        // 3) 尾音：远处回响闷雷（更轻、更低）
+        const dur2 = 2.4;
+        const len2 = Math.max(1, Math.floor(ctx.sampleRate * dur2));
+        const buf2 = ctx.createBuffer(1, len2, ctx.sampleRate);
+        const d2 = buf2.getChannelData(0);
+        let last2 = 0;
+        for (let i = 0; i < len2; i++) {
+          const white = Math.random() * 2 - 1;
+          last2 = (last2 + 0.014 * white) / 1.014;
+          d2[i] = last2 * 3;
+        }
+        const src2 = ctx.createBufferSource();
+        src2.buffer = buf2;
+        const lp2 = ctx.createBiquadFilter();
+        lp2.type = "lowpass"; lp2.frequency.value = 95;
+        const g2 = ctx.createGain();
+        g2.gain.setValueAtTime(0.0001, t + 1.5);
+        g2.gain.exponentialRampToValueAtTime(0.3, t + 2.0);
+        g2.gain.exponentialRampToValueAtTime(0.0001, t + 1.5 + dur2);
+        src2.connect(lp2); lp2.connect(g2); g2.connect(sfxGain);
+        src2.start(t + 1.5);
       } catch (e) {}
     },
     roar() {
