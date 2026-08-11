@@ -229,9 +229,33 @@
   }
 
   /* ---------- 初始化 ---------- */
+
+  /* ---------- 窗外下雨：JS 驱动下落（兼容所有浏览器/内嵌浏览器） ---------- */
+  function startRain() {
+    const fast = document.querySelector(".yrain");
+    const slow = document.querySelector(".yrain2");
+    const items = [];
+    if (fast) items.push({ el: fast, speed: 1500, y: 0 });
+    if (slow) items.push({ el: slow, speed: 800, y: 130 });
+    if (!items.length) return;
+    let last = performance.now();
+    function tick(now) {
+      const dt = Math.min(0.05, (now - last) / 1000 || 0.016);
+      last = now;
+      for (const it of items) {
+        it.y += it.speed * dt;
+        if (it.y > 470) it.y -= 470;
+        it.el.setAttribute("transform", "translate(0, " + it.y.toFixed(2) + ")");
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   let thunderTimer = null;
 
   function init() {
+    startRain();
     // 窗外雷声：约每 3.6 秒一次闷雷（与闪电动画节奏呼应）
     thunderTimer = setInterval(() => {
       try { AudioSys.thunder(); } catch (e) {}
