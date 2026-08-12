@@ -468,3 +468,8 @@ img { -webkit-user-drag: none; }
   .c2-lantern .cord { height: 13px; }
   .c2-lantern .lamp { width: 38px; height: 38px; font-size: 18px; line-height: 36px; }
 }
+/* ---------- 移动端：第一关地面拉高，避免对话框挡住人物 ---------- */
+@media (max-width: 620px) {
+  .scene-layer .ground { height: 28%; }
+  .arena .entity { bottom: 28%; }
+}
