@@ -468,8 +468,15 @@ img { -webkit-user-drag: none; }
   .c2-lantern .cord { height: 13px; }
   .c2-lantern .lamp { width: 38px; height: 38px; font-size: 18px; line-height: 36px; }
 }
-/* ---------- 移动端：第一关地面拉高，避免对话框挡住人物 ---------- */
+/* ---------- 移动端：整体抬高（地面+场景物件+人物），避免对话框挡住人物 ---------- */
 @media (max-width: 620px) {
   .scene-layer .ground { height: 28%; }
   .arena .entity { bottom: 28%; }
+  /* 场景物件随地面一起抬高，不被加高的地面遮挡 */
+  .bg-trail .far-hill, .bg-stronghold .far-hill { bottom: 31%; }
+  .bg-trail .near-hill, .bg-stronghold .near-hill { bottom: 25%; }
+  .bg-trail .stall { bottom: 28% !important; }
+  .bg-stronghold .gate { bottom: 27%; }
+  .bamboo { bottom: 30% !important; }
+  .brazier { bottom: 28% !important; }
 }
