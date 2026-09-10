@@ -359,7 +359,7 @@
     waveTag.textContent = WAVES[i].title;
     // 第三关（黑风寨）使用暗色主角立绘
     if (hero && hero.img) {
-      hero.img.src = "assets/" + (i >= 2 ? "hero-dark.png" : "hero.png");
+      hero.img.src = "assets/" + (i >= 2 ? "hero-dark.png" : "hero.png") + "?v=12";
     }
     showDialog(DIALOGS[i], () => {
       state = "wave";

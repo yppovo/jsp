@@ -1,0 +1,15 @@
+# ===== 本地部署配置，绝不提交到仓库 =====
+.deploy_token
+deploy.py
+publish.ps1
+assets/backup/
+
+# ===== 本地临时文件 / 素材草稿 =====
+_probe/
+vision_output.txt
+chibi_bandit.svg
+chibi_daoist.svg
+assets/src/hero-src.png
+assets/src/hero-dark-src.png
+__tmp*
+*.bak
